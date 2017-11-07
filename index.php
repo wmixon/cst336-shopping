@@ -1,7 +1,12 @@
+<?php
+include 'dbConnection.php';
+
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title> </title>
+        <title> Movies, Games, and Music </title>
     </head>
     <body>
 
