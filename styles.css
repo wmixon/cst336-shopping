@@ -1,0 +1,29 @@
+h1 {
+    background-color: #FFFFFF;
+    text-align: center;
+    color: #3C86CB !important;
+}
+form
+{
+    font-family:Verdana;
+    font-size: 100%;
+}
+
+body {
+    text-align: center;
+    color: #2c8da9;
+    font-family:Verdana;
+    font-size: 100%;
+    border-radius:5px; 
+}
+display{
+    float:left;
+    border: 5px solid black;
+    margin-left:100px;
+
+
+}
+tr
+{
+    border: 2px solid black;
+}
