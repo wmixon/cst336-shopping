@@ -5,25 +5,29 @@
 
     $con = getDatabaseConnection('heroku_87e7042268995be');
         
-        $id = implode(',' , $_SESSION['cart']);
+    $id = implode(',' , $_SESSION['cart']);
         
-            echo"Item from Music category";
-            $sql1 = "select * from music
+    $total = 0;
+        
+    echo"Item from Music category";
+    $sql1 = "select * from music
                 WHERE id IN ($id)";
-            display($sql1, $con);
+    $total += display($sql1, $con, $total);
             
-            echo"Item from Games category";
-            $sql2 = "select * from games
+    echo"Item from Games category";
+    $sql2 = "select * from games
                 WHERE id IN ($id)";
-            display($sql2, $con);
+    $total += display($sql2, $con, $total);
             
-            echo"Item from Films category";
-            $sql3 = "select * from films
+    echo"Item from Films category";
+    $sql3 = "select * from films
                 WHERE id IN ($id)";
-            display($sql3, $con);
+    $total += display($sql3, $con, $total);
+    
+    echo "Total : $" .$total;
         
         //function to display table in the shoping cart
-        function display($sql, $con){
+        function display($sql, $con, $total){
             
             $stmt = $con -> prepare ($sql);
             $stmt -> execute($namedParameters);
@@ -47,10 +51,11 @@
                 echo "<td>".$result['Creator']."</td>";
                 echo "<td>".$result['Quantity']."</td>";
                 echo "<td>".$result['Price']."</td>";
-                
+                $total += $result['Price'];
                 echo "</tr>";
             }
             echo "</table>";
+            return $total;
         }
     
 ?>
