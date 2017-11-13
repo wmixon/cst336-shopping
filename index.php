@@ -37,21 +37,16 @@ function getItems(){
         $stmt = $con -> prepare ($sql);
         $stmt -> execute($namedParameters);
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo "<table id=\"t01\">
+        echo "<table id=\"table1\">
             <tr>
-            <th>Id</th>
  	        <th>Title</th>
          	<th>Creator</th>
          	<th>Quantity (in stock)</th>
          	<th>Price</th>
          	<th></th>
-         	<th></th>
          </tr>";
         foreach($results as $result) {
             echo "<tr>";
-            // this will be where we display the description
-            // "<td><a href=\"itemInfo.php?name=".$result['Title']. "&id=" ."\">" . $result['Creator'] ."</a></td>";
-            echo "<td>".$result['id']."</td>";
             echo "<td><a href=\"info.php?name=".$result['name']. "&id=" . 
                 $result['id'] . "&Title=" . 
                 $result['Title'] . "&Creator=" . 
@@ -64,7 +59,6 @@ function getItems(){
             echo "<td>".$result['Price']."</td>";
             echo "<td><a href=\"add-to-cart.php?name=".$result['name']. "&id=" .
                     $result['id']."\">Add to cart</a></td>";
-            
             echo "</tr>";
         }
         echo "</table>";
