@@ -57,8 +57,13 @@ function getItems(){
             echo "<td>".$result['Creator']."</td>";
             echo "<td>".$result['Quantity']."</td>";
             echo "<td>".$result['Price']."</td>";
-            echo "<td><a href=\"add-to-cart.php?name=".$result['name']. "&id=" .
+            if($result['Quantity'] == 0){
+                echo "<td> Out of Stock </td>";
+            } else {
+                echo "<td><a href=\"add-to-cart.php?name=".$result['name']. "&id=" .
                     $result['id']."\">Add to cart</a></td>";
+            }
+            
             echo "</tr>";
         }
         echo "</table>";
