@@ -52,19 +52,19 @@ function getItems(){
             // this will be where we display the description
             // "<td><a href=\"itemInfo.php?name=".$result['Title']. "&id=" ."\">" . $result['Creator'] ."</a></td>";
             echo "<td>".$result['id']."</td>";
-            echo "<td>".$result['Title']."</td>";
-            echo "<td>".$result['Creator']."</td>";
-            echo "<td>".$result['Quantity']."</td>";
-            echo "<td>".$result['Price']."</td>";
-            echo "<td><a href=\"add-to-cart.php?name=".$result['name']. "&id=" .
-                    $result['id']."\">Add to cart</a></td>";
             echo "<td><a href=\"info.php?name=".$result['name']. "&id=" . 
                 $result['id'] . "&Title=" . 
                 $result['Title'] . "&Creator=" . 
                 $result['Creator'] . "&Description=" . 
                 $result['Description'] . "&Quantity=" . 
                 $result['Quantity'] . "&Price=" . 
-                $result['Price']."\">Info</a></td>";
+                $result['Price']."\">" . $result['Title'] . "</a></td>";
+            echo "<td>".$result['Creator']."</td>";
+            echo "<td>".$result['Quantity']."</td>";
+            echo "<td>".$result['Price']."</td>";
+            echo "<td><a href=\"add-to-cart.php?name=".$result['name']. "&id=" .
+                    $result['id']."\">Add to cart</a></td>";
+            
             echo "</tr>";
         }
         echo "</table>";
@@ -97,6 +97,9 @@ function getItems(){
   	<input type="radio" name="price" value="desc"> Descending
   	<input type="submit" value="Search" name="submit" />
 
+</form>
+<form id='cart' form action="./cart.php" method="get" >
+            <input type="submit" value="Cart">
 </form>
 
 <br />

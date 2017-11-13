@@ -10,11 +10,19 @@ form
 }
 
 body {
+    min-height: 100%;
+    height: 100%;
+    padding-top: 30px;
+    padding-left: 20%;
+    padding-right: 20%;
     text-align: center;
     color: #2c8da9;
     font-family:Verdana;
     font-size: 100%;
-    border-radius:5px; 
+    border-radius:5px;
+    background-image: url('./bg.jpg'), url('./bg.jpg');
+    background-position: right top, left top;
+    background-repeat: no-repeat;
 }
 display{
     float:left;
@@ -26,4 +34,11 @@ display{
 tr
 {
     border: 2px solid black;
+}
+#cart{
+    margin-left: 327px;
+}
+
+#table1{
+     text-align: center;
 }

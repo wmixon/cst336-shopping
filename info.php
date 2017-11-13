@@ -26,6 +26,13 @@ $result_image_source = $newhtml->find('img', 0)->src;
         <h2>Quantity:</h2>
         <?php echo $_GET['Quantity']; ?>
         <br><br>
+        <?php echo "<td><a href=\"add-to-cart.php?name=&id=" .
+                    $_GET['id']."\">Add to cart</a></td>"; ?>
+        <br><br>
+        <form form action="./index.php" method="get" >
+            <input type="submit" value="Click to Go Back Home Page!">
+        </form>
         <center></center>
+        
         </body>
 </html>
