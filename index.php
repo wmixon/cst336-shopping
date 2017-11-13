@@ -45,26 +45,18 @@ function getItems(){
          	<th>Quantity (in stock)</th>
          	<th>Price</th>
          	<th></th>
-         	<th></th>
          </tr>";
         foreach($results as $result) {
             echo "<tr>";
-            // this will be where we display the description
-            // "<td><a href=\"itemInfo.php?name=".$result['Title']. "&id=" ."\">" . $result['Creator'] ."</a></td>";
             echo "<td>".$result['id']."</td>";
-            echo "<td>".$result['Title']."</td>";
+            // this will be where we display the description
+            echo "<td><a href=\"itemInfo.php?name=".$result['Title']. "&id=" .
+                        $result['id']."\">" . $result['Title'] ."</a></td>";
             echo "<td>".$result['Creator']."</td>";
             echo "<td>".$result['Quantity']."</td>";
             echo "<td>".$result['Price']."</td>";
-            echo "<td><a href=\"add-to-cart.php?name=".$result['name']. "&id=" .
+            echo "<td><a href=\"cart.php?name=".$result['name']. "&id=" .
                     $result['id']."\">Add to cart</a></td>";
-            echo "<td><a href=\"info.php?name=".$result['name']. "&id=" . 
-                $result['id'] . "&Title=" . 
-                $result['Title'] . "&Creator=" . 
-                $result['Creator'] . "&Description=" . 
-                $result['Description'] . "&Quantity=" . 
-                $result['Quantity'] . "&Price=" . 
-                $result['Price']."\">Info</a></td>";
             echo "</tr>";
         }
         echo "</table>";
@@ -73,44 +65,3 @@ function getItems(){
 
 ?>
 <!DOCTYPE html>
-<head>
-	<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-	<div id = "wrapper">
-	<h2 style="color: black"> Games, Movies, and Music</h2></h2>
-<form id="indexForm">
-	<br /> <br />
-    
-    <!--I was thinking we can use category to pick the table, but I just get errors when I try to use a variable-->
-    <!--or named parameter for table in sql statement-->
-    Category: <input type="radio" name="category" value="films" ><label for="films"> Films </label>
-            <input type="radio" name="category" value="games" > <label for="games">  Games </label>
-            <input type="radio" name="category" value="music" > <label for="music">  Music </label>
-    <br />
-    <input type="checkbox" name="status" id="status"/>
-    <label for="status"> Show Available Items Only </label>
-
-    <br />
-    <label for="price">Sort by:</label>
-    <input type="radio" name="price" value="asc"> Ascending
-  	<input type="radio" name="price" value="desc"> Descending
-  	<input type="submit" value="Search" name="submit" />
-
-</form>
-
-<br />
-<br />
-<br />
-<center>
-
- 	<?php 
- 	  getItems();
-    ?>
-	
- </center>
-
- </div>
-</body>
-
- </html>
