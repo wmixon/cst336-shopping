@@ -2,7 +2,6 @@
     session_start();
     echo "<link rel='stylesheet' href='styles.css'>";
     include 'dbConnection.php';
-
     $con = getDatabaseConnection('heroku_87e7042268995be');
         
     $id = implode(',' , $_SESSION['cart']);

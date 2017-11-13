@@ -45,6 +45,7 @@ function getItems(){
          	<th>Quantity (in stock)</th>
          	<th>Price</th>
          	<th></th>
+         	<th></th>
          </tr>";
         foreach($results as $result) {
             echo "<tr>";
@@ -57,6 +58,13 @@ function getItems(){
             echo "<td>".$result['Price']."</td>";
             echo "<td><a href=\"add-to-cart.php?name=".$result['name']. "&id=" .
                     $result['id']."\">Add to cart</a></td>";
+            echo "<td><a href=\"info.php?name=".$result['name']. "&id=" . 
+                $result['id'] . "&Title=" . 
+                $result['Title'] . "&Creator=" . 
+                $result['Creator'] . "&Description=" . 
+                $result['Description'] . "&Quantity=" . 
+                $result['Quantity'] . "&Price=" . 
+                $result['Price']."\">Info</a></td>";
             echo "</tr>";
         }
         echo "</table>";
