@@ -59,6 +59,11 @@
         }
     
 ?>
-<form form action="./index.php" method="get" >
-            <input type="submit" value="Click to Go Back Home Page!">
-</form>
+<center></center>
+ <br><br>
+ <form form action="./clear.php" method="get" >
+             <input type="submit" value="Clear Cart">
+ </form>
+  <form form action="./index.php" method="get" >
+              <input type="submit" value="Click to Go Back Home Page!">
+  </form> 
