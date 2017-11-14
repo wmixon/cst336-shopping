@@ -55,7 +55,7 @@
                 echo "<td>".$result['Creator']."</td>";
                 echo "<td>".$result['Quantity']."</td>";
                 echo "<td>".$result['Price']."</td>";
-                $total += $result['Price'];
+               //$total += $result['Price'];
                 echo "</tr>";
             }
             echo "</table>";
