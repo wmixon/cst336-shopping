@@ -8,21 +8,21 @@ function getItems(){
     $namedParameters = array();
     $results = null;
     if(isset($_GET['submit'])){
-        $sql = "select * from films union select * from games union select * from music ";
+        $sql = "select * FROM (select * from films union select * from games union select * from music) as U ";
         if(isset($_GET['category'])){
             $value = $_GET['category'];
             if($value == "films"){
-                $sql = "select * from films";
+                $sql = "select * from films as U";
             }elseif($value == "games"){
-                $sql = "select * from games";
+                $sql = "select * from games as U";
             }elseif($value == "music"){
-                $sql = "select * from music";
+                $sql = "select * from music as U";
             }
         }
         
         //Show only items that are available
         if (isset($_GET['status']) ) { 
-            $sql .= " WHERE Quantity > 0  ";
+            $sql .= " WHERE U.Quantity > 0  ";
         }
         //order items by price asc or desc
         if(isset($_GET['price'])){
