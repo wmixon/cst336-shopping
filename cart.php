@@ -15,23 +15,26 @@
         echo"Item from Music category";
         $sql1 = "select * from music
                     WHERE id IN ($id)";
-        $total += display($sql1, $con, $total);
+        //$total +=
+        display($sql1, $con, $total);
                 
         echo"Item from Games category";
         $sql2 = "select * from games
                     WHERE id IN ($id)";
-        $total += display($sql2, $con, $total);
+       // $total += 
+       display($sql2, $con, $total);
                 
         echo"Item from Films category";
         $sql3 = "select * from films
                     WHERE id IN ($id)";
-        $total += display($sql3, $con, $total);
+       // $total += 
+       display($sql3, $con, $total);
         
         echo "Total : $" .$total;
     }
         //function to display table in the shoping cart
         function display($sql, $con, $total){
-            
+            global $total;
             
             $stmt = $con -> prepare ($sql);
             $stmt -> execute($namedParameters);
