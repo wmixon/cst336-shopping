@@ -12,19 +12,16 @@
     echo"Item from Music category";
     $sql1 = "select * from music
                 WHERE id IN ($id)";
-    //$total += 
     display($sql1, $con, $total);
             
     echo"Item from Games category";
     $sql2 = "select * from games
                 WHERE id IN ($id)";
-    //$total += 
     display($sql2, $con, $total);
             
     echo"Item from Films category";
     $sql3 = "select * from films
                 WHERE id IN ($id)";
-    //$total += 
     display($sql3, $con, $total);
     
     echo "Total : $" .$total;
